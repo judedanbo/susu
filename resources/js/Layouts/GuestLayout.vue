@@ -1,6 +1,11 @@
 <script setup>
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import { Link } from '@inertiajs/vue3';
+import { useDark, useToggle } from '@vueuse/core';
+import { MoonIcon, SunIcon } from '@heroicons/vue/24/outline';
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 </script>
 
 <template>
@@ -15,6 +20,10 @@ import { Link } from '@inertiajs/vue3';
             class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg"
         >
             <slot />
+            <div  class="flex justify-end pt-2">
+                <SunIcon @click="toggleDark()"  v-if="isDark" class="w-5 h-5 text-white cursor-pointer" />
+                <MoonIcon @click="toggleDark()" v-else class="w-5 h-5" />
+            </div>
         </div>
     </div>
 </template>

@@ -20,6 +20,8 @@
     "dependencies": {
         "@formkit/icons": "^0.17.2",
         "@formkit/themes": "^0.17.2",
-        "@formkit/vue": "^0.17.2"
+        "@formkit/vue": "^0.17.2",
+        "@heroicons/vue": "^2.0.18",
+        "@vueuse/core": "^10.1.2"
     }
 }

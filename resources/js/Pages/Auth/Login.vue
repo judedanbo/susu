@@ -39,7 +39,10 @@ const submit = () => {
       {{ status }}
     </div>
 
-    <form @submit.prevent="submit" class="border-b pb-2 mb-2 border-b-gray-700">
+    <form
+      @submit.prevent="submit"
+      class="border-b py-2 mb-2 dark:border-b-gray-700 border-b-gray-300"
+    >
       <div>
         <InputLabel for="email" value="Email" />
 
@@ -81,13 +84,9 @@ const submit = () => {
       </div>
 
       <div class="flex items-center justify-end mt-4">
-        <Link
-          v-if="canResetPassword"
-          :href="route('password.request')"
-          class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 dark:focus:ring-gray-500 dark:focus:ring-offset-gray-800"
-        >
-          Forgot your password?
-        </Link>
+        <NavLink v-if="canResetPassword" :href="route('password.request')"
+          >Forgot your password?
+        </NavLink>
 
         <PrimaryButton
           class="ml-4"
@@ -98,9 +97,9 @@ const submit = () => {
         </PrimaryButton>
       </div>
     </form>
-    <div class="py-2">
-        <span class="text-gray-600 dark:text-gray-500">No Account? </span><NavLink :href="route('register')">Sign Up</NavLink>
+    <div class="pt-2">
+      <span class="text-gray-600 dark:text-gray-500">No Account? </span
+      ><NavLink :href="route('register')">Sign Up</NavLink>
     </div>
-    
-    </GuestLayout>
+  </GuestLayout>
 </template>
