@@ -1,5 +1,8 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
+const formKitTailwind = require("@formkit/themes/tailwindcss")
+// import { FormKitVariants } from "@formkit/themes/tailwindcss";
+
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -8,6 +11,9 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',
+        './resources/js/**/*.js',
+        './resources/js/**/*.ts',
+        './formkit.config.ts'
     ],
 
     theme: {
@@ -18,5 +24,5 @@ export default {
         },
     },
 
-    plugins: [forms],
+    plugins: [forms, formKitTailwind],
 };
